@@ -1,16 +1,21 @@
-import {createMenu} from "./menubar.js";
 
-function aboutImg(){
-	var div = document.getElementById("imgs");
+export function aboutImg(){
+	var div = document.getElementById("about-container");
 	var img = document.createElement("img");
+
+	var img_div = document.createElement("div");
+
+	img_div.className = "img-div";
 
 	img.src = "../img/istockphoto-2153275892-1024x1024.jpg";
 
-	div?.appendChild(img);
+	img_div?.appendChild(img);
+	div?.appendChild(img_div);
 }
 
-function aboutText(){
-	var div = document.getElementById("about-div");
+
+export function aboutText(){
+	var div = document.getElementById("about-container");
 	var text = document.createElement("p");
 
 	text.className = "about-text"
@@ -20,11 +25,3 @@ function aboutText(){
 	div?.appendChild(text);
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-    //createButton();
-	//createImg();
-	createMenu("../index.html","../pages/about.html");
-	aboutText();
-	aboutImg();
-	//mobileMenuf();
-});
