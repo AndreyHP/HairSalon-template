@@ -1,43 +1,17 @@
-import { createMenu } from "./menubar.js";
-
-function createImg(){
-	var div = document.getElementById("imgs") as HTMLElement;
-	var img = document.createElement("img");
+import { createMenu, getContent } from "./menubar.js";
+import { aboutImg } from "./about.js";
+import { aboutText } from "./about.js";
 
 
-	img.src = "../img/002.png";
-
-
-	img.className = "land-scape";
-
-
-	div?.appendChild(img);
-
+function updateMain(){
+	createMenu();
+	aboutImg();
+	aboutText();
+	//hometImg();
+	//homeText();
+	getContent();
 }
 
-
-
-function createButton(){
-	//var div = document.getElementById("div") as HTMLElement;
-
-
-	//var btn = document.createElement("button");
-
-
-	//btn.textContent = "Home";
-
-
-	//btn.className = "center-btn";
-
-	//div?.appendChild(btn);
-
-
-	// Add an event listener to the button
-	//btn.addEventListener('click', () => {
-	//	window.location.href = "./lauren.html";
-	//});
-
-};
 
 function mobileMenuf(){
 	const mobileMenu = document.getElementById("mobile-menu") as HTMLElement;
@@ -50,9 +24,7 @@ function mobileMenuf(){
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    //createButton();
-	//createImg();
-	createMenu("./index.html","../pages/about.html");
+	updateMain();
 	mobileMenuf();
 });
 
